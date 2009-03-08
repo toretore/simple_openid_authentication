@@ -31,7 +31,7 @@ module SimpleOpenidAuthentication
           self.current_user = user
           authentication_successful
         else
-          authentication_failed 'Login failed: Could not save user from requested data'
+          authentication_failed I18n.t('simple_openid_authentication.could_not_save_user')
         end
       end
 

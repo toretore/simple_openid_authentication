@@ -1,0 +1,10 @@
+en:
+  simple_authentication:
+    authenticators:
+      openid:
+        name: OpenID
+        link: Log in using OpenID
+  simple_openid_authentication:
+    title: Log in
+    button: Log in
+    could_not_save_user: "Login failed: Could not save user from requested data"

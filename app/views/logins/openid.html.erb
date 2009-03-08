@@ -1,8 +1,11 @@
+<h2><%= t('simple_openid_authentication.title') %></h2>
+
 <% form_tag login_url(:authenticator => "openid") do -%>
-  <p>
+  <p class="input text">
+    <label for="openid_identifier"><%= User.human_attribute_name('openid_identifier') %></label>
     <%= text_field_tag "openid_identifier" %>
   </p>
-  <p>
-    <%= submit_tag "Log in" %>
+  <p class="submit button">
+    <%= submit_tag t('simple_openid_authentication.button') %>
   </p>
 <% end -%>
