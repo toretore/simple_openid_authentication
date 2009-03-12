@@ -1,0 +1,5 @@
+Description:
+  Add OpenID identifier field to users table
+
+Example:
+    ./script/generate simple_openid_authentication --migration User
