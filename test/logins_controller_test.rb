@@ -3,6 +3,12 @@ require 'test/unit'
 require 'mocha'
 require 'simple_openid_authentication/controller_methods'
 
+class I18n
+  def self.t(*a)
+    ''
+  end
+end
+
 class MockController
   attr_accessor :current_user, :authentication_failed_called, :authentication_successful_called
   include SimpleOpenidAuthentication::ControllerMethods::Logins
