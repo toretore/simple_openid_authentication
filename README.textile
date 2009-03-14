@@ -1,0 +1,17 @@
+SimpleOpenidAuthentication
+============================
+
+This plugin provides an authenticator for "SimpleAuthentication":http://github.com/toretore/simple_authentication
+which authenticates users using OpenID.
+
+
+Installation
+============
+
+First, install the SimpleAuthentication base. Then, add the gem to your
+config/environment.rb file:
+
+config.gem "toretore-simple_openid_authentication", :source => "http://gems.github.com/"
+
+
+Copyright (c) 2009 Tore Darell, released under the MIT license
