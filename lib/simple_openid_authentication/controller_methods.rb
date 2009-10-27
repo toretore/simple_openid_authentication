@@ -22,10 +22,7 @@ module SimpleOpenidAuthentication
       def authenticate_openid_user(identity_url, registration)
         user = User.find_or_initialize_by_openid_identifier(identity_url)
 
-        #Add or update attributes provided by the OpenID server
-        model_to_registration_mapping.each do |attr,reg_key|
-          user.send("#{attr}=", registration[reg_key])
-        end
+        assign_openid_attributes(user, registration)
 
         if user.save
           self.current_user = user
@@ -55,6 +52,13 @@ module SimpleOpenidAuthentication
       def model_to_registration_mapping
         #{:model => 'server'}
         {:name => 'fullname', :email => 'email'}
+      end
+
+      #Add or update attributes provided by the OpenID server
+      def assign_openid_attributes(user, registration)
+        model_to_registration_mapping.each do |attr,reg_key|
+          user.send("#{attr}=", registration[reg_key])
+        end
       end
 
 
